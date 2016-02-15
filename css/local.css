@@ -1,0 +1,9 @@
+ul.side-by-comparison {
+  overflow: hidden;
+  clear: both;
+  margin: 0;
+}
+
+ul.side-by-comparison li {
+  float: left;
+}

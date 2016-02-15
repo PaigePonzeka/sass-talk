@@ -1,0 +1,138 @@
+- Slide 1: Title 
+  - Title: What is Sass and Why do I care
+  - Body: A link where to find the slides
+  - Images: ???  
+
+- Slide 2: Introduction
+  - Title: Who am I?
+  - Body:
+    - Fragmented List
+      - I am Paige, 
+      - a Frontend Engineer
+      - on Team Platypus
+  - Speaker Notes:
+    - For those of you that don't know me. My name is Paige I'm a front-end Engineer here at Yext. I when to NYU in New York City and I started working at a consulting company in NY right out of college. They were using Sass in their code when I started. So I only write in vanilla CSS if I absolutely have to. And When I do I absolutely friggin hate it. 
+  
+  - Slide: 
+   - Title:
+   - Body: 
+   - Speaker Notes: 
+    - So when I volunteered to do a talk I thought this was only supposed to be 8 Minutes. An 8 minute talk about SASS will be easier. But I soon learned that this is supposed to be a 30 minute talk. 
+
+  - Subslide:
+    - Title: 
+    - Body: 
+      WWJD
+    - Speaker Notes:
+      - So  I needed to turn an 8 Minute talk into a 30 Minute Talk. How would I do that? And then I thought WWJD. What Would Jacob Talk. So I created an outline, put together some code snippets. I'm not very good with diagrams and I'm not really sure what I would even diagram.  instead I've done things with Photoshop that I think you'll enjoy
+  - Subslide
+    - Title: Disclaimer
+    - Body:
+    - Speaker Notes:
+      - So I've done some things with photoshop. We work at a very special place that lets us have some fun. But if you go work anywhere else please be careful, be smart and know your environment before you inappropiately  photoshop you're companies executives onto other people's bodies. (You'll see this all later) And if you're going to do it, make sure you ALREADY have your plane ticket home from the Company Off-site. Just In Case.
+
+  - Slide 3:
+    - Title: So What the Hell is Sass?
+    - Body:
+      - "Make CSS Fun again."
+      - "It's CSS with super powers"
+      - You can do cool Shit with it
+      - MEDIA: Picture of a frozen piece of poop with sunglasses ( https://jakearchibald.com/static/posts/using-serviceworker-today/cool-shit.320727ccd5a8.png)
+    - Speaker Notes:
+      So Anyway. Lets get this started. So What is Sass? Some might say "It's CSS with super powers." Others say is "Makes CSS fun again." Tl;DR Sass is a CSS preprocessor. It's just a scripting language that extends CSS. You can so some cool shit with SASS. I like to think that it makes boring old CSS a programming language and makes writing CSS not suck. Sass Gives CSS the power of variables, functions, mixins, inline partials & the best and nesting.
+
+  - Slide 4:
+    - Title: Why does CSS Suck?
+    - Body:
+      - MEDIA: Animated Gif of writing lengthy vanilla CSS*
+    - Speaker Notes: 
+      - When I was your age you had to write all of your CSS selectors out by hand. It's tedious, it's annoying and 
+
+  - Slide 
+    - Title: Nesting in Sass
+    - Body:
+      - ^^^ CSS written with SASS featuring nesting with &
+    - Speaker Notes:
+      - An simple, overlooked yet awesome feature of Sass is selector Nesting. 
+
+  - Slide 5: 
+    - Title: What if you want to change Colors or themes?
+    - Body:
+      -MEDIA: Howard and Jonks heads photoshopped onto a 50 Shades of Gray Poster
+    -Speaker Notes:
+      - After spending a number of late nights at the office for various other reasons. Howard and product have decided that they feel really inspired by some movie they had just watched and they want to remove all of the colors of yext and replace then with various shades of gray.
+
+      If all our code was in CSS, and we didn't use variables for all our colors. You would have to find and replace all instances of hexidecimal colors. You'd have to comb through thousands of lines of CSS to make sure you've changed every instance of a color in the code. You'd have to open the pages and test them all to make sure you've removed every instance of that color.
+
+  - Slide 6:
+    - Title: And what if they change their mind?
+    - Body:
+      - MEDIA: Howard or Sean's face photo shopped onto another movie poster (Orange is the New Black)
+    - Speaker Notes:
+      - And then when they spend another late night at the office bing watching another TV Show and they get some more inspiration and then tell you they want to change the color Theme again.
+
+  - Slide 7 
+    - Title: Using Variables to solve that problem
+    - Body
+      - MEDIA: Picture of our _vars.scss Colors variables
+    - Speaker Notes:
+      -  I'm making a joke but this ACTUALLY happens. We have rebranded storm and i have gone through all of our CSS and replaced the gray with OTHER shades of gray. I used variables instead so when this happens it's easier so if we want to change the colors again it just takes a couple of line changes and a deploy and everything is different.
+
+    - Slide 8 *
+      - Title: Organize your Files with Partials
+      - Body:
+        - Media: Picture of our social.scss with our imports
+        - Media:  folder of scss files for social with _ names
+      - Speaker Notes:
+        - With @import we can import partial files, denoted with an underscore. This helps prevent your CSS files from being a thousand lines and a mess of shit and it makes it easier to work on.
+
+    - Slide
+      - Title: Refactor to Mixins
+      - Body
+        - TODO Mixins screenshot of the prescence builder _star.scss code
+        - There's nothing more annoying then having to repeat yourself. And Mixins help to keep your code DRY. 
+
+    - Slide
+      - Title: Create a Mixin Using Variables & default Variables
+      - Body
+        - An example of a defined Mixin in the _mixins.scss from _star with variables 
+      - Speaker notes:
+        - We keep are Mixins in Play/Common/ under the stylesheets. Just grep for _mixins.scss I'm not your mother. You can create a mixin by using the @mixin directive. It can include arguments and you can even set defaults with the above syntax.
+
+    - Slide
+      - Title: Loops
+      - Body:
+        - TODO For loop with Stars in _icon.scss
+      - Speaker Notes:
+        - You can use for loops
+
+    - Slide 
+      - Title: Maps, Mixins, For Loops, If/else
+      - Body:
+        - http://review2/378655/
+      - Speaker Notes: 
+        Instead of just making up some bullshit examples. I decide to just refactor some of our existing CSS code to show some examples of it in action. Here's an example of a simple map and a for each loop to generate the two different
+
+    - Slide
+      - Title: @extend
+      - Body:
+        Example of it being used in the buttons
+      - Speaker Notes:
+        @extend can be pretty powerful. Allows you to share rules between selectors. It groups extended selectors together. 
+
+
+    - Slide 
+      - Title: Why @Extend can be bad
+      - Body: 
+        - Extending Decendants can be bad
+        - https://www.smashingmagazine.com/2015/05/extending-in-sass-without-mess/
+      - Speaker notes:
+        With great power comes great responsibility. If you aren't careful @extend can create a bit of a mess. Using too many @extends or a lot of embedded selectors can create some unexpected results or very heavy selectors. It can turn the generated CSS into a gross mess. Try to keep in mind what will happened when you use @extend and think about whether a Mixin is the best option for you or using placeholders.
+
+    - Slide
+      - Title: Why Placeholders are awesome
+      - Body:
+        - Player three has entered the game
+      - Speaker notes:
+        - Placeholders are relatively new and have mainly come around to address the bloated CSS produced from extending classes. They are ignored by the CSS output.=\]
+        ['']
