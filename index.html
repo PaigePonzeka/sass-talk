@@ -54,13 +54,13 @@
 				<section data-transition="convex">
 					<h2>Who Are You?</h2>
 					<ul>
-						<li class="fragment">My name is Paige</li>
+						<li class="fragment">Yo I'm Paige</li>
 						<li class="fragment">a Front-end Engineer</li>
 						<li class="fragment">on the Platypus Application Platform Team</li>
 					</ul>
 
 					<aside class="notes">
-						For those of you that don't know me. My name is Paige I'm a front-end Engineer here at Yext. I when to NYU in New York City and I started working at a consulting company in NY right out of college. They were using Sass in their code when I started. So I only write in vanilla CSS if I absolutely have to. And When I do I absolutely friggin hate it
+						For those of you that don't know me. My name is Paige I'm a front-end Engineer who works on the Application Platform Team aka Platypus.I've been writing in Sass since I graduated college Sass in their code when I started. So I rarely write in vanilla CSS but when I do I absolutely hate it.
 					</aside>
 				</section>
 
@@ -68,17 +68,16 @@
 				<section data-transition="convex">
 					<h2>Writing Vanilla CSS Sucks</h2>
 					<img src="./images/writing_css.gif"/>
-					<aside class="notes">Writing Vanilla CSS Sucks. It's repetitive. You have to write the same classes over and over again. It's time consuming. There's no concept of nesting. Need to change the color of something? Hopefully you used consisten colors, because you're only option is to use Find & Replace. There's no concept of variables in CSS. Trying to maintain vanilla CSS on an entire platform is a nightmare. So they've come up with some solutions and one of those include Sass.</aside>
+					<aside class="notes">Writing Vanilla CSS Sucks. It's repetitive. You have to write the same classes over and over again. Which is also time consuming. If you need to change the color of something? Hopefully you used consistent hexidecimal colors, because you're only option is to use Find & Replace in a text editor. There's no concept of variables in CSS. Trying to maintain vanilla CSS on a large platform such as storm would be an absolute nightmare. Fortunately, they've some up with some solution to the CSS maintenance nightmare and that solution includes Sass.</aside>
 				</section>
 
 				<!-- Slide - What the Hell is Sass -->
 				<section>
 					<section data-transition="zoom">
-						<h2>So Let's Use Sass</h2>
-						<p>But what the hell is it?</p>
+						<h2>What the hell is Sass?</h2>
 						<blockquote class="fragment highlight-blue">"It's CSS With super powers."</blockquote>
 						<blockquote class="fragment highlight-green">"It makes CSS fun again."</blockquote>
-						<aside class="notes"> So What the hell is Sass? Some might say "It's CSS with super powers." Sure. Others say is "Makes CSS fun again." I mean I guess. </aside>
+						<aside class="notes"> So, What the hell is Sass? Some might say "It's CSS with super powers." Sure. Others say is "Makes CSS fun again." I mean I guess if that's how you define fun. </aside>
 					</section>
 
 
@@ -86,26 +85,53 @@
 					<section data-transition="zoom">
 						<h2>Sass is a CSS preprocessor</h2>
 						<img class="fragment" src="./images/coolshit.png"/>
-						<aside class="notes">Sass is a CSS preprocessor. It's a scripting language  that extends CSS. I like to think that it makes writing CSS not suck. Sass Gives CSS the power of nesting, variables, functions, mixins, inline partials. And those features let you write some pretty cool shit.</aside>
+						<aside class="notes">Sass is a CSS preprocessor. It's a scripting language that extends CSS. I like to think that it makes writing CSS not suck. Sass Gives CSS the power of nesting, variables, functions, mixins, & inline partials. And those features let you write some pretty cool shit.</aside>
 					</section>
 
 					<!-- Subslide - What the hell is Sass - Nesting-->
 					<section data-transition="concave">
-						<h2>Nesting</h2>
+						<h2>Sass Nesting</h2>
 							<ul class="side-by-comparison">
 								<li><img src="./images/table-css.png"/></li>
 								<li class="fragment"><img src="./images/table-scss.png"/></li>
 							</ul>
-						<aside class="notes">Nesting in Sass makes your CSS easier to read and maintain. It gives you a visual hierarchy. So you can go from something like this table css. To this Table.scss. </aside>
+						<aside class="notes">Nesting in Sass makes your CSS easier to read and maintain. It gives you a visual hierarchy. So you can go from something like this table css. To this Table Sass. Not only is the Sass a bit shorter than its CSS counterpart. You'll notice in the CSS file we had to write the rounded-table class a total of five times. In our Sass file we just needed it once and the Sass compiler handled the rest. </aside>
 					</section>
 
-					<section>
+					<section data-transition="concave">
 						<h1>The Inception Rule</h1>
 						<p>Don't go more than four levels deep</p>
 						<aside class="notes">
-							Be careful to limit your nests. Generally speaking you should nest over 4 times otherwise that will result in overqualified CSS that will be hard to override and maintain.
+							There's a problematic side to having convinent nesting. You need to police yourself and be careful to limit your nesting. You shouldn't nest over 4 times otherwise you will create overqualified CSS that will be hard to override and maintain later on.
 						</aside>
 					</section>
+				</section>
+
+				<section data-transition="concave">
+						<h2>What is an overqualified selector?</h2>
+						<p class="fragment">CSS = <span class="fragment highlight-blue">Cascading</span> Stylesheet</p>
+						<img class="fragment" src="./images/css-cascading.png"/>
+						<aside class="notes">
+							I just want to take a second to explain what an overqualified selector is since I'm not sure everyone knows what the means. To understand why an Overqualified selector is bad you need to understand a little bit about how CSS works. CSS stands for Cascading Style Sheet. The important thing to note here is the "Cascading" part. It means that if you have two equal selectors in a stylesheet. Such as in this snippet of CSS. The later declared selector is applied. So here all of the text in our paragraph tags will be purple since it is declared after purple.
+						</aside>
+				</section>
+
+				<section data-transition="zoom">
+					<h2>Selector Values</h2>
+					<img src="./images/weights.png"/>
+					<br/>
+					Source: <a href="https://css-tricks.com/specifics-on-css-specificity/">https://css-tricks.com/specifics-on-css-specificity/</a>
+					<aside class="notes">
+						You can think of CSS selectors as a sort of point system. The selector with the most points gets their styles applied. And different selectors have different weights. If you're interested in learning more about this I recommend Checking out this article on CSS selector values and their weights over at css-tricks. I got this little diagram from over there. Looking at this diagram note that it goes from left to right with the most specific or values with the most points are on the left and least specific values (less points) are on the right. Also Note a "Style Attribute" is also called an inline style. It's simply styles that are declared directly in the HTML. But you don't have to worry about those since you should never do this UNLESS you are setting an element as display none for javascript reasons or styling an email. But looking at this selector you can see it has a weight of 1, 1, 3 so if it was to be overridden it would need a score of 1,1,3 or more. Which is already a pretty hefty selector.
+					</aside>
+				</section>
+
+				<section data-transition="zoom">
+					<h2>An overqualified selector</h2>
+					<img src="./images/overqualified.png"/>
+					<aside class="notes"> 
+						Knowing all that we can guess that an overqualified selector is simply a selector with a lot more points then its needs. This is a problem because later on, the only way to override it is to also use a selector of equal or greater value. So if we go back to our other example and see that we still wanted our paragraph tag to have purple text we've have to do .some-class div ul li p and then declare the color to be purple. And we'd have to continue to do that if we want to override it again. That's annoying, please don't do that. This is one of the main critisims of Sass since its so easy to fall down the rabbit hole of too many nested selectors.
+					</aside>
 				</section>
 
 				<!-- Slide - Ampersand -->
@@ -117,25 +143,43 @@
 						<li class="fragment"><img src="./images/ampersand-compiled.png"/></li>
 					</ul>
 					
-					<aside class="notes">Ampersand is used when nesting. It tells Sass to pull down any parent selector into the child selector. For example: This link code above can be used with these psuedo classes to create this compiled css. Nested selectors don't have to start with the &. They can also end with the ampersand which will put the parent selector as a child. </aside>
+					<aside class="notes">Ampersand is another Sass directive used when nesting. It tells Sass to pull down any parent selector into the child selector. In this example all the pseudo class children hover, visited and active are nested inside of an link tag and have an ampersand infront of their declarations. This will compile to the following CSS where it pulls down the parent link tag to be in front of its pseudo class children.</aside>
 				</section>
-				<!-- TODO Add a slide for ampersand to the child-->
-
-				<!-- Slide Organize to Partials -->
-				<section data-transition="fade-in">
-					<h2>Partials</h2>
-					<img src="./images/dam-scss.png"/>
+				
+				<section data-transition="zoom">
+					<h2>Nested Selectors don't have to start with &</h2>
+					<ul class="side-by-comparison">
+						<li><img src="./images/parent-scss.png"/></li>
+						<li class="fragment"><img src="./images/parent-css.png"/></li>
+					</ul>
 					<aside class="notes">
-						Using inline imports we can organize our SCSS files into partial files just as we do with our html templates. Partials are generally, denoted with an underscore. It also lets us import shared content across, shown by the lib/meta file here which is a partial that contains all our storm wide vars, mixins, and compass imports. More on that later.
+						But Nested Selectors don't have to start with an Ampersand, they can also end with it. Putting the ampersand at the end like we're doing in the .child selector will still pull the parent class down. The compiled CSS will look something like this.
 					</aside>
 				</section>
 
-				<section>
+				<!-- Slide Organize to Partials -->
+				<section data-transition="fade-in">
+					<h2>_partials</h2>
+					<img src="./images/dam-scss.png"/>
+					<aside class="notes">
+						Sass also has the ability to use inline imports to help us organize our SCSS files into partial files just as we do with our html templates. Partials are generally, denoted with an underscore which just tell the compiler not to generate that partial into a CSS file. The underscore isn't as important for us since our Sass files are compiled explicitly in Play. Partials also lets us import shared content across multiple files, as shown by the lib/meta file here which is a partial that contains all our System wide variables, mixins, and compass imports. I'll talk More about Compass later.
+					</aside>
+				</section>
+
+				<section data-transition="fade-in">
 					<h2> Functions</h2>
 					<img src="./images/function.png"/>
 					<img src="./images/function-call.png"/>
 					<aside class="notes"> 
-					We actually don't use these very often and I couldn't find an instance of this in our Sass code. It's very similar to another directive I'm going to show you called a mixin. Except instead of generating CSS (which is what a mixin does) it returns a value and it's simple called by its function name. 
+					I actually couldn't find an instance of a function being used in our Storm Sass. But It's similar to another directive we use heavily called a mixin. Functions return a value. There are already some build in Sass functions that can be pretty useful.
+					</aside>
+				</section>
+
+				<section data-transition="fade-in">
+					<h2>Sass Functions</h2>
+					<img src="./images/number-function.png"/>
+					<aside class="notes">
+						You can find the documention for the built in functions at sass-lang.com. It can do basic mathematical operations such as addition, subtraction, division etc. You can see it also has some rounding functionality and ability to convert numbers to percentages. There's also some String and color functions that can be helpful. For example: say if you wanted to lighten or darken a color for an accent. You can just pass in a color and a percentage you want to darken the color and it will generate the darkened hexidecimal value for that color. I actually use those a lot to generate accent colors in my personal projects.
 					</aside>
 				</section>
 
@@ -146,23 +190,23 @@
 					<section >
 						<h3>The Power of Variables: A Scenario</h3>
 						<img class="fragment" src="./images/50Shades.jpg"/>
-						<aside class="notes">So Say, after spending a number of late nights at the office for various reasons. Yext CEO Howard has decided that, for some reason, he feels really inspired to remove all of the colors in Storm and replace them with various shades of gray. Maybe 50 Shades.
+						<aside class="notes">So here's a scenario were Sass can make your life much easier. Say, after spending a number of late nights at the office. Yext CEO, Howard has decided that, for some reason, he feels really inspired to remove all of the colors in Storm and replace them with various shades of gray. Say... Maybe 50 Shades og Gray.
 						If all of our code was written in CSS and we didn't use variables for our colors. We would have to find and replace all instances of the hexidecimal colors. You'd have to manually comb through hundreds and maybe thousands of lines of code.
 						</aside>				
 					</section>
 
 					<!-- Slide - Variables colors --> 
 					<section>
-						<h2>This actually happened</h2>
+						<h3>So, This actually happened</h3>
 						<img src="./images/colors-scss.png"/>
-						<aside class="notes">So this actuallly happened before. We were using Sass at the time but we didn't assign any of our colors to varialbles so I had to do just that and Comb through thousands of lines of CSS, find every instance of a color and change it. I spent a pretty long time changing one shade of gray to a different shade of gray. It was wonderful. But I made sure when I did it I added variables to our color assignments. You can see the colors in the _color.scss files. Pictured here.</aside>
+						<aside class="notes">So this actually happened at Yext a year or so ago. I don't really remember when it happened since I try to block it from my memory. We actually were using Sass at the time but we didn't assign any of our colors to variables, instead we just used the hexidecimal representation of the color everywhere. So I had to Comb through thousands of lines of CSS, find every instance of a color and change it to another color. I spent a pretty long time changing one shade of gray to a slightly different shade of gray. It was tedious. But I made sure when I did it I added variables to our color assignments. You can see the colors variables in the _color.scss files. Some are shown here. Also Note that I named the variables to describe what color they represent. This is useful particularly since not many people can just look at a hexidecimal value and know its corresponding color.</aside>
 					</section>
 
 					<section>
 						<h2>Naming Conventions</h2>
 						<img src="./images/colors-vars.png"/>
 						<aside class="notes"> 
-							Also Note that I named the variables to include their colors names. That wouldn't be useful if we needed to change the colors later, since it would be confusing if $brand-blue was actually gray later on. Instead I made them colors that were obvious to a user what they could be. So for usability to other developers initial variables are names after their colors. But then when they are used in CSS for example $color-location-cms is to indicate the color is it on the navigation bar and even without being familar with storm I can know its some shade of blue.
+							 Using all of the color's names as variables throughout our Sass wouldn't be very useful if say we needed to change all the colors later. So for usability for other developers initial variables are named after their colors but when they're used they should be given more generic names. For example looking at this we can tell that Storm's representative color for location-cms is the yext blue, for listings is green and pages is purple. These colors are used in the navigation. So if we wanted to change location-cms on the navigation to a gray we can just change it here in the colors.Sass partial.
 						</aside>
 					</section>
 
@@ -170,160 +214,258 @@
 					<section>
 						<h3>And if we change again?</h3>
 						<img src="./images/orangeisthenewblack.jpg"/>
-						<aside class="notes">If Howard ever feels that itch of inspiration again. We can change all of the colors of storm but just changing a few lines in the _color.scss partial and deploying are changes. As long as everyone else working in the SASS had been using the color variables.</aside>
+						<aside class="notes">Since we've used variables to declare the colors in our Sass. If and When Howard ever feels that itch of inspiration again. We can change all of the colors of storm by just changing a few lines in the _color.scss partial, recompiling the CSS and deploying our changes. </aside>
 					</section>
 				</section>
 
-				<section>
-					<h2>Sass Operations</h2>
-					<img src="./images/number-function.png"/>
-					<aside class="notes">
-						Sass has some built in helper math operations that can be very useful. You can find the documention at sass-lang.com. It can do basic mathematical operations such as addition, subtraction, division. There's also some number functions, String functions and color functions that can be helpful say if you wanted to lighten or darken a color for an accent. You can just pass in a color an a percentage and it will darken it for you. I actually use those one's a lot.
-					</aside>
-				</section>
+				
 				<!-- Slide Let's Refactor -->
 				<section>
-					<h1>Let's make our code better</h1>
-					<aside class="notes">We know some of the basics of Sass. Now lets refactor some living and breathing Storm Sass code to use some of the more powerful features. Starting with mixins.</aside>
+					<h1>Let's Refactor</h1>
+					<aside class="notes">We know some of the basics of Sass. Now lets refactor some living and breathing Storm Sass code using some of the basics we already know and we can also show off some of the cooler and more powerful features of Sass.</aside>
 				</section>
 
 				<!-- Prescence builder refactor -->
 				<section>
 					<!-- Slide: Prescence builder original -->
-					<section>
+					<section data-transition="fade-in">
 						<img src="images/prescence-builder-original.png" />
-						<aside notes="notes">Here's an for example from Prescence builder. There's some Repetitive Code here. But We can fix that. Let's use some mixins to clean this up. First let's take note of a couple things. There are variables used for the background image. Which I've already seen stores the url in a variables partial. Let's create our Mixin. </aside>
+						<aside class="notes">Here's an example of existing code from Prescence builder. Let's take note of a couple things. It looks like we're declaring a few variables for the background image of a few classes. Specifically a full-star, half-star and empty-star and it looks like the images change slightly depending on its container. There's some simple Repetitive Code here. But We can fix that using a feature in Sass called a Mixin.</aside>
 					</section>
-					<section>
+
+					<section data-transition="fade-in">
 						<h1>What is a @mixin?</h1>
 						<aside class="notes">
-						I guess we should know what a mixin is first. Mixins are created using the @mixin directive. It can include arguments (but it doesn't have to), you can set defaults, and it can even take blocks of css. Storm Mixins live in the _mixin.scss partial. Now. let's take a look at our new Mixin.
+							Mixins are created using the @mixin directive. It can include required or optional arguments, and it can even take blocks of css.Storm Mixins live in the _mixin.scss partial. Now, let's take a look at our new Mixin for the prescence builder code.
 						</aside>
 					</section>
 					<!-- Slide: Mixins -->
-					<section>
+					<section data-transition="fade-in">
 						<h2>@mixin</h2>
 						<img src="images/pb-refactor-mixins.png" />
-						<aside class="notes"> You can see a $full-star (at the end of the arguments) has a default value set to $iconStarBlue so if we don't set it in any of our calls it will automatically be assigned. Then we can just simply call the mixin from our Sass file.</aside>
+						<aside class="notes"> You can see in the prescence-builder-star mixin I've added several arguments declared just like variables with a dollar sign. The $full-star variable ( which lives at the end of the arguments since it's optional). Has a default value which is set to $iconStarBlue, that way if we don't set it in any of our calls it will automatically be assigned. We also have required variables $half-star and $empty-star. </aside>
 					</section>
 					<!-- Slide: Mixin Call -->
-					<section>
+					<section data-transition="fade-in">
 						<h2>@include the Mixin</h2>
 						<img src="images/pb-refactor-stars.png" />
-						<aside class="notes">We can call the mixin with @include declartion and send it our variables just like you would call a function.</aside>
+						<aside class="notes">Now we can just include our mixin in our prescence builder Sass. We can call the mixin with @include declartion and send it our variables just like you would call a function. </aside>
 					</section>
 				</section>
 
 				<!-- Slide: Refactoring with For Loops -->
-				<section>
-					<h2>Refactoring with For Loops</h2>
+				<section data-transition="fade-in">
+					<h3>Loops</h3>
+					<h5>@for, @while & @each</h5>
+
+					<pre><code data-trim class="scss" style="font-size: 30px; line-height: 1em;">
+						$num: 4;
+
+@while $num > 0 {
+    .module-#{$num} {
+        content: "#{$num}";
+    }
+
+    $num: $num - 1;
+}
+					</code></pre>
+					<aside class="notes">Sass also supports loops which can come in handy. Sass currently supports a for loop with the @for notation, @each loop and @while. I'm going to demo a @for and @each but here's an example of how to use a while loop in Sass. Also just note that pound sign bracket notation for the module dash $num in the selector is string interpolation. It actually comes from Ruby. So its just going to result in module dash 4, module dash 3 etc</aside>
+				</section>
+
+				<section data-transition="fade-in">
+					<h2>Refactoring with @for</h2>
 					<ul class="side-by-comparison">
 						<li><img src="./images/icons-before.png"/></li>
 						<li class="fragment" style="width: 465px;"><img src="./images/icons-refactor.png"/></li>
 					</ul>
-					<aside class="notes">Sass also supports loops which can come in handy for situations like this. Using for loops we can limit this Stars Sass to just a couple lines. The refactor is pretty straight forward here. It loops from 1 to ten and generates the star value and the width of the background image.</aside>
+					<aside class="notes">  Using a for loop to can limit this Stars Sass to just a couple lines. The refactor is pretty straight forward here. It loops from 1 to 10 and generates the star value and the calculated width of the element in multiples of 8.</aside>
 				</section>
 
 				<!-- Slide: Maps. Mixins, Loops, If/Else  -->
-				<section>
-					<section>
+				<section data-transition="fade-in slide-out">
+					<section >
 						<h2>Refactoring Partner Icons</h2>
 						<img src="./images/partner-logos.gif"/>
-						<aside class="notes">Here's a big one. This is over a hundred lines for the Partner Logos on the Social Page located in the _icon.scss partial. There's two different sized sets of Icons, 20px and 30px. They've followed a naming convention for the files, which is really nice actualy. That will make this a really quick refactor.</aside>
+						<aside class="notes">Here's a more complicated one and a much larger refactor. This is over a hundred lines for the Partner Logos on the Social Page, this code is located in the _icon sass partial. There's two different sized sets of Icons, 20px and 30px that include all of the same partners. They've followed a naming convention for the files, which is really nice actualy. That will make this a really quick refactor.</aside>
 					</section>
 
-					<section>
+					<section data-transition="fade-in slide-out">
 						<h4>Refactoring Partner Icons - Map</h4>
 						<img src="./images/partner-logos-map.png"/>
-						<aside class="notes">Sass also supports maps. Here is a Simple map we can put in the _vars.scss partial. It just maps the partner Ids to their respective names and we can use a loop to iterate over the map in our mixin.</aside>
+						<aside class="notes">Sass also supports maps which are used in @each loops. Here is a Simple map we can put in the _vars sass partial. It just maps the partner Ids to their respective names then we can use a loop in our mixin to generate our logos.</aside>
 					</section>
 					
-					<section>
+					<section data-transition="fade-in slide-out">
 						<h4>Refactoring Partner Icons - Mixins</h4>
 						<img src="./images/partner-logos-mixins.png"/>
-						<aside class="notes">This is the partner-logos mixin that could live in the _mixins.scss partial. The only thing it needs is the dimensions of the logo, it uses the file naming convention we saw earlier to generate the names of the partner logos in a few lines.
+						<aside class="notes">This is the partner-logos mixin that could live in the _mixins.scss partial. The only thing it needs is the dimensions of the logo, it uses the file naming convention we saw earlier to generate the names of the partner logos in just a few lines.
 					</section>
 
-					<section>
+					<section data-transition="fade-in slide-out">
 						<h4>Refactoring Partner Icons - Includes</h4>
 						<img src="./images/partner-logos-call.png"/>
 						<aside class="notes">
-							And here's the call we make to generate each of the logo sizes. Cutting down a few hundred lines and making it much easier to add addition partner icons later. 
+							And here's the call we make to generate each of the logo sizes. Cutting down a few hundred lines and making it much easier to add additional partner icons later but just updating the partners map. 
 						</aside>
 					</section>
 
 				</section>
 
 				<section>
-					<section>
+					<section data-transition="fade-in">
 						<h1>@extend</h1>
 						<aside class="notes"> Let's take a break from refactoring to take a look at another powerful Sass feature.
 
-						@extend is another nifty directive in Sass. It allows you to share rules between selectors and it groups extend selectors together.
+						@extend is another nifty directive in Sass. It allows you to share rules between selectors. Extended selectors are grouped together.
 						</aside>
 					</section>
 
-					<section>
+					<section data-transition="fade-in">
 						<h4>We use @extend heavily in the Storm buttons</h4>
 						<img src="./images/extends-buttons.png"/>
-						<aside class="notes">You can see it in action here in the _buttons partial. You might ask yourself why do you have btn-orange and btn-blue if all of the storm buttons are gray. Well remember that 50 Shades of Grey scenario i mentioned earlier? An old branding of Storm had different colored buttons for different actions. When we rebranded we got rid of those buttons and shifted to all gray buttons (minus the warning button). To keep compatibility with old styles and to potentinally keep from breaking any javascript that might happen to use those styling classes for their code I kept the classes around and just inherited style from other buttons. 
+						<aside class="notes">You can see it in action here in the _buttons partial. You might ask yourself why do you have btn-orange and btn-blue if all of the storm buttons are gray. Well remember that 50 Shades of Grey scenario i mentioned earlier? An old branding of Storm had different colored buttons for different actions. When we rebranded we got rid of those buttons and shifted to all gray buttons (minus the warning button which is red). To keep compatibility with old styles and to potentinally keep from breaking any javascript or css that might happen to use those styling classes for their code I kept the classes around and just inherited style from other buttons. 
 
-						(Also for the record, never use a styling class as a JQuery selector, whether or not I want a dark gray or light gray button shouldn't also affect whether the buttons runs an ajax call or not)</aside>
+						(Also for the record, never use a styling class as a JQuery selector, whether or not I want a dark gray or light gray button shouldn't also affect whether the buttons runs an ajax call or not.)</aside>
 					</section>
 					<section>
 						<h3>Compiled CSS using @extends</h3>
 						<img src="./images/buttons-compiled.png"/>
 						<aside class="notes"> Anyway back to some CSS. 
-							I deleted some of the actual compiled CSS just so you can see what's going on but here's an example of a compiled CSS from the @extend directive. Here you can see that .btn-action and .btn-orange are no side by side. This is BASICALLY what @extend does. It creates the idea of inheritence in Sass but instead of duplicating the CSS and having it in both places it comma seperates the original selector and applys the styles more effiently. Great. Except.
+							I deleted some of the actual compiled CSS just so you can see what's going on but here's an example of compiled CSS from the @extend directive. Here you can see that .btn-action and .btn-orange are now side by side in the CSS. This is BASICALLY what @extend does. It creates the idea of inheritence in Sass but instead of duplicating the CSS and having it in both places (which we could simply achieve with a mixin), it comma seperates the original selector and applys the styles more effiently. Which is Great. Except.
 						</aside>
 					</section>
 					
 					<section data-background="./images/shame.gif">
 						<h2>@extend does bad things sometimes</h2>
-						<aside class="notes">@extend does bad things sometimes. It doesn't always work the way you expect it to. And can lead to generating some pretty hefty selectors. Let's take a look at one example.</aside>
+						<aside class="notes">@extend does bad things sometimes. 
+							It doesn't always work the way you expect it to. It can lead to generating some pretty hefty selectors that bloat your CSS. Let's take a look at one example.</aside>
 					</section>
 
 					<section>
 						<h4>Styling the button later</h4>
 						<img src="./images/buttons-extend-bad.png"/>
-						<aside class="notes">Say, after using @extend on the action-button class. We wanted to later style the action button in a sidebar on a page. Maybe we had a sidebar and the button needed padding for some reason and I also wanted to change what it does when the user hovers over the button. Obviously you could do something like this and just make .btn-action a child of sidebar and add my custom stying. Does anyone have an idea what this would compile to?</aside>
+						<aside class="notes">Say, after using @extend on the action-button class. We wanted style the button later on a particular page. Maybe we had a sidebar and the button needed padding for some reason and I also wanted to change what it does when the user hovers over it. Obviously you would do something like this and just make .btn-action a child of sidebar and add the custom namespaced styling. Does anyone have an idea what this would compile to?</aside>
 					</section>
 
 					<section>
-						<h4>What it compiles to:</h4>
+						<h4>Compiled CSS:</h4>
 						<img src="./images/buttons-extend-bad-compiled.png"/>
-						<aside class="notes">It generates into something like this, which is a bit unexpected and if you need custom styles on your extend button class a lot or if you extend it in a lot of places. These selectors will grow larger and larger and bloat are compiled CSS. Which is what we don't want.</aside>
+						<aside class="notes">It generates into something like this, which is a bit unexpected and if you need custom styles on your extended button class often or if you extend it in a lot of places, these selectors will grow larger and larger. Which is what we don't want.</aside>
 					</section>
 
 					<section>
 						<h3>What can we do about this?</h3>
 						<img class="fragment" src="./images/player-three.jpg"/>
 						<aside class="notes">
-							There's one fix it to just turn the shared styling into a mixin and include it on both classes. That will duplicate the CSS and put it in bother places. There's another way we can do it with the @extend directive.And luckily for us. The creators of Sass introduced a new directive to address this very problem. Meet Placeholders.
+							One fix is to just turn the shared styling into a mixin and include it on both classes. But That will duplicate the CSS on both selectors. Which will still lead to bloated css. Lucky for us, the creators of Sass introduced a new directive to address this very problem with @extend. Meet Placeholders.
 						</aside>
 					</section>
 
 					<section>
 						<h3>%Placeholders</h3>
 						<img src="./images/placeholders.png"/>
-						<aside class="notes">Instead of using a period infront of the extended class, you can use the percent sign and that prevents the selector from being inserted into the CSS. Now only extended selectors will be included in the CSS. Here's an example where I created %btn-action-pl a placeholder that is extended by both btn-action and .btn-orange.
+						<aside class="notes">Instead of using a period infront of the extended class, you can use the percent sign and create to create a placeholder, that prevents the selector from being inserted into the CSS. Now only extended selectors will be included in the CSS. Here's an example where I created %btn-action-pl, a placeholder that is extended by both btn-action and .btn-orange.
 						</aside>
 					</section>
 
 					<section>
-						<h3>That compiles to:</h3>
+						<h3>Compiled CSS:</h3>
 						<img src="./images/placeholders-compiled.png"/>
 						<aside class="notes">
 						This compiles to the above CSS.
-						That's a little bit more of what we expected. Notice that .btn-orange is no longer called in the code for the sidebar. We actually currently don't use placeholders in Storm buttons but maybe we should probably consider it.
-						</aside>
+						That's a little bit more of what we expected. Notice that .btn-orange is no longer called in the code for the sidebar. We actually currently don't use placeholders in Storm buttons but we should probably consider it.
+						</aside> 
 					</section>
 				</section>
 
 				<section>
 					<h2>Compass</h2>
-					<aside class="notes">Now on to compass. It is calls the jQuery for Stylesheets. It's a library of CSS functions and patterns that make it easier for getting started.</aside>
+					<h4>compass-style.org</h4>
+					<aside class="notes">Now on to compass. Some people call it the jQuery of CSS. Which is ehhh kinda of truish. I guess. But it's a bit more general then that. It's a library of SCSS functions, mixins and patterns that make it easier for getting started with Sass. You can read the documentation and all the available mixins over at compass-style.org. I'm not going to spend much time on it since the Compass documentation is pretty extensive and actually really nice so you can go check out everything you can do over on their site but I'll show you an example of some cool little functions it has built in. </aside>
 				</section>
+
+				<section>
+					<h3>opposite-position</h3>
+					<pre><code class="scss" style="font-size: 30px; line-height: 1em;">
+$direction: left;
+$opposite: opposite-position($direction);
+
+.div1 {
+  float: $direction;
+}
+
+.div2 {
+  float: $opposite;
+}
+					</code></pre>
+					<aside class="notes">Take a look at opposite-position which takes in a direction in this case we declared direction as left and returns the css equivalent of the oppostive which is right in this case.
+				</section>
+
+				<section>
+					<h3>opposite-position Compiled CSS</h3>
+					<pre><code class="css" style="font-size: 30px; line-height: 1em;">
+.div1 {
+  float: left;
+}
+
+.div2 {
+  float: right;
+}
+
+					</code></pre>
+					<aside class="notes">Here's what it would compile to.  It can also take in the CSS value Top Left and will Return Bottom Right.
+				</section>
+
+				<section>
+					<h2>Experimental</h2>
+					<h4>SCSS</h4>
+					<pre><code class="scss" style="font-size: 20px; line-height: 1em;">
+.element {
+  @include experimental('animation', highlight 1s linear, webkit, moz, o, ms, not khtml);
+}					</code></pre>
+
+					<h4>Compiled CSS</h4>
+										<pre><code class="scss" style="font-size: 30px; line-height: 1em;">
+.element {
+  -webkit-animation: highlight 1s linear;
+  -moz-animation: highlight 1s linear;
+  -ms-animation: highlight 1s linear;
+  -o-animation: highlight 1s linear;
+  animation: highlight 1s linear;
+}
+				</code></pre>
+				<aside class="notes">Another nice little helper is the experimental mixin which comes in handy for writing Experimental CSS3 features (which need the browser specific prefixs). And as you can see by the output they are very annoying to write and update.</aside>
+				</section>
+
+				<section>
+					<h2>Branded Spinner</h2>
+					<img src="./images/spinner.gif"/>
+					<aside class="notes">I actually used experimental in the branded spinning loader you might have seen around storm. Compass especially made my life easier for development of this since I only had to change values once when tweaking the timing of the animation. Unfortunately since it uses CSS3 animations and transformations this little spinner doesn't work in some versions of internet explorer.</aside>
+				</section>
+				
+				<section>
+					<h2>How most Engineers feel about IE Users</h2>
+					<img src="./images/baby2.gif"/>
+					<aside class="notes">But thats okay. If you're using IE you probably have much bigger problems than whether or not you see an animated Logo.</aside>
+				</section>
+
+				<section>
+					<h3>Resources & References</h3>
+					<ul>
+						<li><a href="http://sass-lang.com/">Sass-lang.com</a> - Sass Documentation and tutorials</li>
+						<li><a href="http://compass-style.org">Compass-style.org</a> - Compass Documentation</li>
+						<li><a href="http://www.sassmeister.com/">Sass Meister</a> - Sass Playground</li>
+						<li>These slides will be available...somewhere</li>
+					</ul>
+					<img src="./images/sassmeister.png"/>
+					<aside class="notes">Here's some references and resources for you to check out if you want to learn more. You can go to Sass-lang.com for Sass documentions. Compass-style.org for the Compass documention (which is actually really great and really easy to use) they have code snippets and show you the compass mixin and then CSS it compiles to in little tabs alone with previews of the generated html results. And if you ever want to play around with some Sass and compass to see what it will compile to, check out Sass Meister. It even lets you import Sass frameworks such as compass if you adjust the little settings cog in the toolbar. It's very handy and I used it a lot to generate code for this talk. You can actually connect it to your github account (that's the little dino in the corner) and save your experiments as gists to your account so you can look at them later. </aside>
+				</section>
+				<section>
+					<h2>Questions?</h2>
+					<img src="./images/baby2.gif"/>
+					<aside class="notes">Now I will go back to the gif of the IE user and the baby and see if you have any questions</aside<
+				</section>
+
 			</div>
 
 		</div>
