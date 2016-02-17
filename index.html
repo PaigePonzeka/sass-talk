@@ -46,7 +46,7 @@
 					<p>Slides Available on github: <a href="https://github.com/PaigePonzeka/reveal.js/tree/sass-talk">https://github.com/PaigePonzeka/reveal.js/tree/sass-talk</a></p>
 					</p>
 					<aside class="notes">
-						So I'm going to talk to you about Sass. A lovely simple front-end technology that is often overlooked and why you can use it to make writing CSS less terrible and less annoying.
+						So I'm going to talk to you about Sass. A lovely simple front-end technology that makes our lives much easier. It can make writing CSS less terrible and less annoying.
 					</aside>
 				</section>
 
@@ -60,7 +60,7 @@
 					</ul>
 
 					<aside class="notes">
-						For those of you that don't know me. My name is Paige I'm a front-end Engineer who works on the Application Platform Team aka Platypus.I've been writing in Sass since I graduated college Sass in their code when I started. So I rarely write in vanilla CSS but when I do I absolutely hate it.
+						For those of you that don't know me. My name is Paige I'm a front-end Engineer who works on the Application Platform Team aka Platypus. I've been writing in Sass at all of the places I've worked since I graduated. So I rarely write in vanilla CSS but when I do I absolutely hate it.
 					</aside>
 				</section>
 
@@ -68,24 +68,16 @@
 				<section data-transition="convex">
 					<h2>Writing Vanilla CSS Sucks</h2>
 					<img src="./images/writing_css.gif"/>
-					<aside class="notes">Writing Vanilla CSS Sucks. It's repetitive. You have to write the same classes over and over again. Which is also time consuming. If you need to change the color of something? Hopefully you used consistent hexidecimal colors, because you're only option is to use Find & Replace in a text editor. There's no concept of variables in CSS. Trying to maintain vanilla CSS on a large platform such as storm would be an absolute nightmare. Fortunately, they've some up with some solution to the CSS maintenance nightmare and that solution includes Sass.</aside>
+					<aside class="notes">Writing Vanilla CSS Sucks. It's repetitive. You have to write the same classes over and over again. Which is also time consuming. If you need to change the color of something? Well Hopefully you used consistent hexidecimal colors, because you're only option is to use Find & Replace in a text editor. There's no concept of variables in CSS. Trying to maintain vanilla CSS on a large platform such as storm would be an absolute nightmare. Fortunately, they've some up with some solutions to the CSS maintenance nightmare and on of those solutions includes Sass.</aside>
 				</section>
 
 				<!-- Slide - What the Hell is Sass -->
 				<section>
-					<section data-transition="zoom">
-						<h2>What the hell is Sass?</h2>
-						<blockquote class="fragment highlight-blue">"It's CSS With super powers."</blockquote>
-						<blockquote class="fragment highlight-green">"It makes CSS fun again."</blockquote>
-						<aside class="notes"> So, What the hell is Sass? Some might say "It's CSS with super powers." Sure. Others say is "Makes CSS fun again." I mean I guess if that's how you define fun. </aside>
-					</section>
-
-
 					<!-- Subslide - What the hell is Sass -->	
 					<section data-transition="zoom">
 						<h2>Sass is a CSS preprocessor</h2>
 						<img class="fragment" src="./images/coolshit.png"/>
-						<aside class="notes">Sass is a CSS preprocessor. It's a scripting language that extends CSS. I like to think that it makes writing CSS not suck. Sass Gives CSS the power of nesting, variables, functions, mixins, & inline partials. And those features let you write some pretty cool shit.</aside>
+						<aside class="notes">Sass is a CSS preprocessor. It's a scripting language that extends CSS. I like to think that it makes writing CSS not suck by turning it into a programming language. Sass Gives CSS the power of nesting, variables, functions, mixins, & inline partials. And those features let you write do some pretty cool shit.</aside>
 					</section>
 
 					<!-- Subslide - What the hell is Sass - Nesting-->
@@ -95,7 +87,7 @@
 								<li><img src="./images/table-css.png"/></li>
 								<li class="fragment"><img src="./images/table-scss.png"/></li>
 							</ul>
-						<aside class="notes">Nesting in Sass makes your CSS easier to read and maintain. It gives you a visual hierarchy. So you can go from something like this table css. To this Table Sass. Not only is the Sass a bit shorter than its CSS counterpart. You'll notice in the CSS file we had to write the rounded-table class a total of five times. In our Sass file we just needed it once and the Sass compiler handled the rest. </aside>
+						<aside class="notes">Nesting in Sass makes your CSS easier to read and maintain. It gives you a visual hierarchy. So you can go from something like this table css. To this Table Sass. Not only is the Sass a bit shorter than its CSS counterpart. You'll notice in the CSS file we had to write the rounded-table class a total of five times. In our Sass file we just needed it once and the Sass compiler will handle the rest. </aside>
 					</section>
 
 					<section data-transition="concave">
@@ -110,9 +102,19 @@
 				<section data-transition="concave">
 						<h2>What is an overqualified selector?</h2>
 						<p class="fragment">CSS = <span class="fragment highlight-blue">Cascading</span> Stylesheet</p>
-						<img class="fragment" src="./images/css-cascading.png"/>
+						<pre class="fragment">
+						<code class="scss" style="font-size:28px; line-height: 1.5em;">
+p {
+  color: blue;
+}
+p {
+  color: purple;
+}
+						</code>
+						</pre>
+						
 						<aside class="notes">
-							I just want to take a second to explain what an overqualified selector is since I'm not sure everyone knows what the means. To understand why an Overqualified selector is bad you need to understand a little bit about how CSS works. CSS stands for Cascading Style Sheet. The important thing to note here is the "Cascading" part. It means that if you have two equal selectors in a stylesheet. Such as in this snippet of CSS. The later declared selector is applied. So here all of the text in our paragraph tags will be purple since it is declared after purple.
+							I just want to take a second to explain what an overqualified selector is since I'm not sure everyone knows what the means. To understand why an Overqualified selector is bad you need to understand a little bit about how CSS works. CSS stands for Cascading Style Sheet. The important thing to note here is the "Cascading" part. It means that if you have two equal selectors in a stylesheet. Such as in this snippet of CSS. The later declared selector is applied. So here all of the text in our paragraph tags will be purple since it is declared after blue.
 						</aside>
 				</section>
 
@@ -122,13 +124,23 @@
 					<br/>
 					Source: <a href="https://css-tricks.com/specifics-on-css-specificity/">https://css-tricks.com/specifics-on-css-specificity/</a>
 					<aside class="notes">
-						You can think of CSS selectors as a sort of point system. The selector with the most points gets their styles applied. And different selectors have different weights. If you're interested in learning more about this I recommend Checking out this article on CSS selector values and their weights over at css-tricks. I got this little diagram from over there. Looking at this diagram note that it goes from left to right with the most specific or values with the most points are on the left and least specific values (less points) are on the right. Also Note a "Style Attribute" is also called an inline style. It's simply styles that are declared directly in the HTML. But you don't have to worry about those since you should never do this UNLESS you are setting an element as display none for javascript reasons or styling an email. But looking at this selector you can see it has a weight of 1, 1, 3 so if it was to be overridden it would need a score of 1,1,3 or more. Which is already a pretty hefty selector.
+						You can think of CSS selectors as a sort of point system. The selector with the most points gets their styles applied. And different types of selectors have different weights. If you're interested in learning more about this I recommend Checking out this article at css-tricks.com on CSS selector values and their weights. I got this little diagram from over there since I thought it explained it fairly well. Looking at it note that it goes from left to right with the most specific or values with the most points on the left and least specific values (less points) are on the right. Also Note a "Style Attribute" is also called an inline style. It's simply styles that are declared directly in the HTML. But you don't have to worry about those since you should never do this UNLESS you are setting an element as display none for javascript reasons or styling an email. But anyway looking at this selector you can see it has a weight of 0, 1, 1, 3. Which means it has no inline styles, has a single ID (#nav) one calss (active) and 3 elements (ul, list-item and link)  so if it was to be overridden it would need a score of 1,1,3 or more. Which is already a pretty hefty selector.
 					</aside>
 				</section>
 
 				<section data-transition="zoom">
 					<h2>An overqualified selector</h2>
-					<img src="./images/overqualified.png"/>
+						<pre class="fragment">
+						<code class="css" style="font-size:28px; line-height: 1.5em;">
+.some-class div ul li p {
+  color: blue;
+}
+p {
+  color: purple;
+}
+						</code>
+						</pre>
+
 					<aside class="notes"> 
 						Knowing all that we can guess that an overqualified selector is simply a selector with a lot more points then its needs. This is a problem because later on, the only way to override it is to also use a selector of equal or greater value. So if we go back to our other example and see that we still wanted our paragraph tag to have purple text we've have to do .some-class div ul li p and then declare the color to be purple. And we'd have to continue to do that if we want to override it again. That's annoying, please don't do that. This is one of the main critisims of Sass since its so easy to fall down the rabbit hole of too many nested selectors.
 					</aside>
@@ -298,7 +310,7 @@
 					<section data-transition="fade-in slide-out">
 						<h4>Refactoring Partner Icons - Mixins</h4>
 						<img src="./images/partner-logos-mixins.png"/>
-						<aside class="notes">This is the partner-logos mixin that could live in the _mixins.scss partial. The only thing it needs is the dimensions of the logo, it uses the file naming convention we saw earlier to generate the names of the partner logos in just a few lines.
+						<aside class="notes">This is the partner-logos mixin that could live in the _mixins.scss partial. The only thing it needs in this mixin is the dimensions of the logo, it uses the partners variable map and an each loop to iterate though the map and generate the logo class based on the id and the file name nased on the partner name and its dimensions. Also you might notice there's a background-position set only when the dimensions are 30 pixels thanks to an if statement.
 					</section>
 
 					<section data-transition="fade-in slide-out">

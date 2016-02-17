@@ -7,3 +7,8 @@ ul.side-by-comparison {
 ul.side-by-comparison li {
   float: left;
 }
+
+code {
+  line-height: 1em;
+  font-size: 30px;
+}
