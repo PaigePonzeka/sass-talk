@@ -6,6 +6,18 @@ ul.side-by-comparison {
 
 ul.side-by-comparison li {
   float: left;
+  margin-right: 20px;
+  list-style: none;
+}
+
+ul.side-by-comparison li:last-child {
+  margin-right: 0;
+}
+
+ul.side-by-comparison pre {
+  padding: 0;
+  margin: 0;
+  width: 100%;
 }
 
 code {

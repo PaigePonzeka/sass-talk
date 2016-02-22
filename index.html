@@ -51,7 +51,7 @@
 				</section>
 
 				<!-- Slide 2 Introduction-->
-				<section data-transition="convex">
+				<!--<section data-transition="convex">
 					<h2>Who Are You?</h2>
 					<ul>
 						<li class="fragment">Yo I'm Paige</li>
@@ -62,7 +62,7 @@
 					<aside class="notes">
 						For those of you that don't know me. My name is Paige I'm a front-end Engineer who works on the Application Platform Team aka Platypus. I've been writing in Sass at all of the places I've worked since I graduated. So I rarely write in vanilla CSS but when I do I absolutely hate it.
 					</aside>
-				</section>
+				</section>-->
 
 				<!-- Slide - Why Does CSS Suck? -->
 				<section data-transition="convex">
@@ -128,7 +128,7 @@ p {
 					</aside>
 				</section>
 
-				<section data-transition="zoom">
+				<!--<section data-transition="zoom">
 					<h2>An overqualified selector</h2>
 						<pre class="fragment">
 						<code class="css" style="font-size:28px; line-height: 1.5em;">
@@ -144,7 +144,7 @@ p {
 					<aside class="notes"> 
 						Knowing all that we can guess that an overqualified selector is simply a selector with a lot more points then its needs. This is a problem because later on, the only way to override it is to also use a selector of equal or greater value. So if we go back to our other example and see that we still wanted our paragraph tag to have purple text we've have to do .some-class div ul li p and then declare the color to be purple. And we'd have to continue to do that if we want to override it again. That's annoying, please don't do that. This is one of the main critisims of Sass since its so easy to fall down the rabbit hole of too many nested selectors.
 					</aside>
-				</section>
+				</section>-->
 
 				<!-- Slide - Ampersand -->
 				<section data-transition="concave">
@@ -161,8 +161,26 @@ p {
 				<section data-transition="zoom">
 					<h2>Nested Selectors don't have to start with &</h2>
 					<ul class="side-by-comparison">
-						<li><img src="./images/parent-scss.png"/></li>
-						<li class="fragment"><img src="./images/parent-css.png"/></li>
+						<li><h4>SASS</h4>
+<pre><code data-trim class="scss" style="font-size: 24px; line-height: 1em;">
+.parent {
+	padding: 10px;
+
+	.child & {
+		background: #f0f;
+	}
+}
+					</code></pre></li>
+						<li class="fragment"><h4>CSS</h4>
+<pre><code data-trim class="css" style="font-size: 24px; line-height: 1em;">
+.parent {
+	padding: 10px;
+}
+
+.child .parent {
+	background: #f0f;
+}
+					</code></pre></li>
 					</ul>
 					<aside class="notes">
 						But Nested Selectors don't have to start with an Ampersand, they can also end with it. Putting the ampersand at the end like we're doing in the .child selector will still pull the parent class down. The compiled CSS will look something like this.
@@ -288,7 +306,7 @@ p {
 					<h2>Refactoring with @for</h2>
 					<ul class="side-by-comparison">
 						<li><img src="./images/icons-before.png"/></li>
-						<li class="fragment" style="width: 465px;"><img src="./images/icons-refactor.png"/></li>
+						<li class="fragment" style="width: 444px;"><img src="./images/icons-refactor.png"/></li>
 					</ul>
 					<aside class="notes">  Using a for loop to can limit this Stars Sass to just a couple lines. The refactor is pretty straight forward here. It loops from 1 to 10 and generates the star value and the calculated width of the element in multiples of 8.</aside>
 				</section>
@@ -470,7 +488,7 @@ $opposite: opposite-position($direction);
 						<li>These slides will be available...somewhere</li>
 					</ul>
 					<img src="./images/sassmeister.png"/>
-					<aside class="notes">Here's some references and resources for you to check out if you want to learn more. You can go to Sass-lang.com for Sass documentions. Compass-style.org for the Compass documention (which is actually really great and really easy to use) they have code snippets and show you the compass mixin and then CSS it compiles to in little tabs alone with previews of the generated html results. And if you ever want to play around with some Sass and compass to see what it will compile to, check out Sass Meister. It even lets you import Sass frameworks such as compass if you adjust the little settings cog in the toolbar. It's very handy and I used it a lot to generate code for this talk. You can actually connect it to your github account (that's the little dino in the corner) and save your experiments as gists to your account so you can look at them later. </aside>
+					<aside class="notes">Here's some references and resources for you to check out if you want to learn more. You can go to Sass-lang.com for Sass documentions. Compass-style.org for the Compass documention (which is actually really great and really easy to use) they have code snippets and show you the compass mixin and then CSS it compiles to in little tabs alone with previews of the generated html results. And if you ever want to play around with some Sass and compass to see what it will compile to, check out Sass Meister. It even lets you import Sass frameworks such as compass if you adjust the little settings cog in the toolbar. It's very handy and I used it a lot to generate code for this talk. You can actually connect it to your github account (that's the little dino in the corner) and save your experiments as gists (or ghists if you're Breezy) to your account so you can look at them later. </aside>
 				</section>
 				<section>
 					<h2>Questions?</h2>
