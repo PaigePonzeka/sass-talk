@@ -15,7 +15,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
 
 		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/night.css" id="theme">
+		<link rel="stylesheet" href="css/theme/yext.css" id="theme">
 		<link rel="stylesheet" href="css/local.css">
 
 		<!-- Code syntax highlighting -->
@@ -41,9 +41,9 @@
 
 			<div class="slides">
 				<!-- Slide 1 Title-->
-				<section>
-					<h2>The Power of Sass</h2>
-					<p>Slides Available on github: <a href="https://github.com/PaigePonzeka/reveal.js/tree/sass-talk">https://github.com/PaigePonzeka/reveal.js/tree/sass-talk</a></p>
+				<section data-background="./images/goplaces_bg.png">
+					<h1 style="background: rgba(0,0,0, 0.7); padding: 5px;">The Power of Sass</h1>
+										<h2 style="background: rgba(0,0,0, 0.7); padding: 5px;">Paige Ponzeka</h2>
 					</p>
 					<aside class="notes">
 						Today I'm going to talk to you about Sass. A simple and lovely front-end technology that makes our lives much easier. We use it at Yext to make writing and maintaining CSS less terrible.
@@ -66,7 +66,7 @@
 
 				<!-- Slide - Why Does CSS Suck? -->
 				<section data-transition="convex">
-					<h2>Writing Vanilla CSS Sucks</h2>
+					<h2 style="margin-top: -15px;">Writing Vanilla CSS Sucks</h2>
 					<img src="./images/writing_css.gif"/>
 					<aside class="notes">Writing Vanilla CSS Sucks. It's repetitive. You have to write the same classes over and over again. Which is also time consuming. If you need to change the color of something? Well Hopefully you used consistent hexidecimal colors, because you're only option is to use Find & Replace in a text editor. There's no concept of variables in CSS. Trying to maintain vanilla CSS on a large platform such as storm would be an absolute nightmare. Fortunately, they've come up with some solutions to the CSS maintenance nightmare and one of those solutions includes Sass.</aside>
 				</section>
@@ -82,7 +82,7 @@
 
 					<!-- Subslide - What the hell is Sass - Nesting-->
 					<section data-transition="concave">
-						<h2>Sass Nesting</h2>
+						<h2 style="margin-top: -35px">Sass Nesting</h2>
 							<ul class="side-by-comparison">
 								<li><img src="./images/table-css.png"/></li>
 								<li class="fragment"><img src="./images/table-scss.png"/></li>
@@ -100,7 +100,7 @@
 				</section>
 
 				<section data-transition="concave">
-						<h2>What is an overqualified selector?</h2>
+						<h2 style="margin-top: 20px;">What is an overqualified selector?</h2>
 						<p class="fragment">CSS = <span class="fragment highlight-blue">Cascading</span> Stylesheet</p>
 						<pre class="fragment">
 						<code class="scss" style="font-size:28px; line-height: 1.5em;">
@@ -164,21 +164,21 @@ p {
 						<li><h4>SASS</h4>
 <pre><code data-trim class="scss" style="font-size: 24px; line-height: 1em;">
 .parent {
-	padding: 10px;
+  padding: 10px;
 
-	.child & {
-		background: #f0f;
-	}
+  .child & {
+	  background: #f0f;
+  }
 }
 					</code></pre></li>
 						<li class="fragment"><h4>CSS</h4>
 <pre><code data-trim class="css" style="font-size: 24px; line-height: 1em;">
 .parent {
-	padding: 10px;
+ padding: 10px;
 }
 
 .child .parent {
-	background: #f0f;
+ background: #f0f;
 }
 					</code></pre></li>
 					</ul>
@@ -189,7 +189,7 @@ p {
 
 				<!-- Slide Organize to Partials -->
 				<section data-transition="fade-in">
-					<h2>_partials</h2>
+					<h2 style="margin-top: -30px">_partials.scss</h2>
 					<img src="./images/dam-scss.png"/>
 					<aside class="notes">
 						Sass also has the ability to use inline imports to help us organize our SCSS files into partial files just as we do with our html templates. Partials are generally, denoted with an underscore which just tell the compiler not to generate that partial into a CSS file. The underscore isn't as important for us since our Sass files are compiled explicitly in Play. Partials also lets us import shared content across multiple files, as shown by the lib/meta file here which is a partial that contains all our System wide variables, mixins, and compass imports. I'll talk More about Compass later.
@@ -197,7 +197,7 @@ p {
 				</section>
 
 				<section data-transition="fade-in">
-					<h2> Functions</h2>
+					<h2 style="margin-top: -45px"> Functions</h2>
 					<img src="./images/function.png"/>
 					<img src="./images/function-call.png"/>
 					<aside class="notes"> 
@@ -206,8 +206,8 @@ p {
 				</section>
 
 				<section data-transition="fade-in">
-					<h2>Sass Functions</h2>
-					<img src="./images/number-function.png"/>
+					<h2 style="margin-top: -50px;">Sass Functions</h2>
+					<img style="height: 100%;" src="./images/number-function.png"/>
 					<aside class="notes">
 						You can find the documention for the built in functions at sass-lang.com. It can do basic mathematical operations such as addition, subtraction, division etc. You can see it also has some rounding functionality and ability to convert numbers to percentages. There's also some String and color functions that can be helpful. For example: say if you wanted to lighten or darken a color for an accent. You can just pass in a color and a percentage you want to darken the color and it will generate the darkened hexidecimal value for that color. I actually use those a lot to generate accent colors in my personal projects.
 					</aside>
@@ -218,8 +218,8 @@ p {
 
 					<!-- Slide - Variables colors --> 
 					<section >
-						<h3>The Power of Variables: A Scenario</h3>
-						<img class="fragment" src="./images/50Shades.jpg"/>
+						<h3 style="margin-top: -10px">The Power of Variables: A Scenario</h3>
+						<img style="min-height: 600px" class="fragment" src="./images/50Shades.jpg"/>
 						<aside class="notes">So here's a scenario were Sass can make your life much easier. Say, after spending a number of late nights at the office. Yext CEO, Howard has decided that, for some reason, he feels really inspired to remove all of the colors in Storm and replace them with various shades of gray. Say... Maybe 50 Shades og Gray.
 						If all of our code was written in CSS and we didn't use variables for our colors. We would have to find and replace all instances of the hexidecimal colors. You'd have to manually comb through hundreds and maybe thousands of lines of code.
 						</aside>				
@@ -227,13 +227,13 @@ p {
 
 					<!-- Slide - Variables colors --> 
 					<section>
-						<h3>So, This actually happened</h3>
+						<h3 style="margin-top: -5px;">So, This actually happened</h3>
 						<img src="./images/colors-scss.png"/>
 						<aside class="notes">So this actually happened at Yext a year or so ago. I don't really remember when it happened since I try to block it from my memory. We actually were using Sass at the time but we didn't assign any of our colors to variables, instead we just used the hexidecimal representation of the color everywhere. So I had to Comb through thousands of lines of CSS, find every instance of a color and change it to another color. I spent a pretty long time changing one shade of gray to a slightly different shade of gray. It was tedious. But I made sure when I did it I added variables to our color assignments. You can see the colors variables in the _color.scss files. Some are shown here. Also Note that I named the variables to describe what color they represent. This is useful particularly since not many people can just look at a hexidecimal value and know its corresponding color.</aside>
 					</section>
 
 					<section>
-						<h2>Naming Conventions</h2>
+						<h2 style="margin-top: -30px">Naming Conventions</h2>
 						<img src="./images/colors-vars.png"/>
 						<aside class="notes"> 
 							 Using all of the color's names as variables throughout our Sass wouldn't be very useful if say we needed to change all the colors later. So for usability for other developers initial variables are named after their colors but when they're used they should be given more generic names. For example looking at this we can tell that Storm's representative color for location-cms is the yext blue, for listings is green and pages is purple. These colors are used in the navigation. So if we wanted to change location-cms on the navigation to a gray we can just change it here in the colors.Sass partial.
@@ -242,7 +242,7 @@ p {
 
 					<!-- Slide - Variables colors --> 
 					<section>
-						<h3>And if we change again?</h3>
+						<h3 style="margin-top: -10px;">And if we change again?</h3>
 						<img src="./images/orangeisthenewblack.jpg"/>
 						<aside class="notes">Since we've used variables to declare the colors in our Sass. If and When Howard ever feels that itch of inspiration again. We can change all of the colors of storm by just changing a few lines in the _color.scss partial, recompiling the CSS and deploying our changes. </aside>
 					</section>
@@ -314,7 +314,7 @@ p {
 				<!-- Slide: Maps. Mixins, Loops, If/Else  -->
 				<section data-transition="fade-in slide-out">
 					<section >
-						<h2>Refactoring Partner Icons</h2>
+						<h2 style="margin-top: -25px">Refactoring Partner Icons</h2>
 						<img src="./images/partner-logos.gif"/>
 						<aside class="notes">Here's a more complicated one and a much larger refactor. This is over a hundred lines for the Partner Logos on the Social Page, this code is located in the _icon sass partial. There's two different sized sets of Icons, 20px and 30px that include all of the same partners. They've followed a naming convention for the files, which is really nice actualy. That will make this a really quick refactor.</aside>
 					</section>
@@ -447,7 +447,7 @@ $opposite: opposite-position($direction);
 				</section>
 
 				<section>
-					<h2>Experimental</h2>
+					<h2 style="margin-top: -45px;">Experimental</h2>
 					<h4>SCSS</h4>
 					<pre><code class="scss" style="font-size: 20px; line-height: 1em;">
 .element {
